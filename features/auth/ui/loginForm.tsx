@@ -1,9 +1,12 @@
 "use client";
 
 import { Wrapper } from "./wrapper";
+import { useTheme } from "next-themes";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { type LoginSchemaType, LoginSchema } from "@/features/auth/schemes";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { toast } from "sonner";
 
 import {
   Form,
@@ -14,9 +17,14 @@ import {
   FormMessage,
   Input,
   Button,
-} from "../../../shared/ui";
+} from "@/shared/ui";
+
+import ReCAPTCHA from "react-google-recaptcha";
 
 export function LoginForm() {
+  const { theme } = useTheme();
+  const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null);
+
   const form = useForm<LoginSchemaType>({
     resolver: zodResolver(LoginSchema),
     defaultValues: {
@@ -26,7 +34,11 @@ export function LoginForm() {
   });
 
   const onSubmit = (values: LoginSchemaType) => {
-    console.log(values);
+    if (recaptchaValue) {
+      console.log(values);
+    } else {
+      toast.error("Пожалуйста, завершите reCAPTCHA");
+    }
   };
 
   return (
@@ -73,6 +85,14 @@ export function LoginForm() {
               </FormItem>
             )}
           />
+
+          <div className="flex justify-center">
+            <ReCAPTCHA
+              sitekey={process.env.GOOGLE_RECAPTCHA_SITE_KEY as string}
+              onChange={setRecaptchaValue}
+              theme={theme === "light" ? "light" : "dark"}
+            />
+          </div>
 
           <Button className="cursor-pointer" type="submit">
             Продолжить
