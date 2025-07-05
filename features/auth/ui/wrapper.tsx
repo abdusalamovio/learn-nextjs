@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
   Button,
-} from "../../../shared/ui";
+} from "@/shared/ui";
 
 import { Social } from "./social";
 import Link from "next/link";

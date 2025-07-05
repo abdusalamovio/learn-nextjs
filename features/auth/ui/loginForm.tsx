@@ -2,7 +2,7 @@
 
 import { Wrapper } from "./wrapper";
 import { useForm } from "react-hook-form";
-import { type LoginSchemaType, LoginSchema } from "../schemes";
+import { type LoginSchemaType, LoginSchema } from "@/features/auth/schemes";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import {
@@ -74,7 +74,9 @@ export function LoginForm() {
             )}
           />
 
-          <Button type="submit">Продолжить</Button>
+          <Button className="cursor-pointer" type="submit">
+            Продолжить
+          </Button>
         </form>
       </Form>
     </Wrapper>

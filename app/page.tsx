@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { buttonVariants } from "../shared/ui";
+import { buttonVariants } from "@/shared/ui";
 
 export default function Home() {
   return (
