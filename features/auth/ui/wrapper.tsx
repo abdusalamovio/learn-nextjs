@@ -30,7 +30,7 @@ export function Wrapper({
   isShowSocial = false,
 }: PropsWithChildren<WrapperProps>) {
   return (
-    <Card className="w-[400px]">
+    <Card className="w-[400px] gap-3 py-4.5">
       <CardHeader className="space-y-2">
         <CardTitle>{heading}</CardTitle>
         {description && <CardDescription>{description}</CardDescription>}
