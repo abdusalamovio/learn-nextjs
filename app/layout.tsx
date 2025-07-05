@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/shared/styles/globals.css";
-import { MainProvider } from "@/shared/providers";
-import { ToggleTheme } from "@/shared/ui";
+import { MainProvider } from "../shared/providers";
+import { ToggleTheme } from "../shared/ui";
 
 const inter = Inter({
   variable: "--font-inter",

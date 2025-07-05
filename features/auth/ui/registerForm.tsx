@@ -2,10 +2,7 @@
 
 import { Wrapper } from "./wrapper";
 import { useForm } from "react-hook-form";
-import {
-  type RegisterSchemaType,
-  RegisterSchema,
-} from "@/features/auth/schemes";
+import { type RegisterSchemaType, RegisterSchema } from "../schemes";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import {
@@ -17,7 +14,7 @@ import {
   FormMessage,
   Input,
   Button,
-} from "@/shared/ui";
+} from "../../../shared/ui";
 
 export function RegisterForm() {
   const form = useForm<RegisterSchemaType>({

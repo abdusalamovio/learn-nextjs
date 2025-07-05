@@ -2,7 +2,7 @@
 
 import { Wrapper } from "./wrapper";
 import { useForm } from "react-hook-form";
-import { type LoginSchemaType, LoginSchema } from "@/features/auth/schemes";
+import { type LoginSchemaType, LoginSchema } from "../schemes";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import {
@@ -14,7 +14,7 @@ import {
   FormMessage,
   Input,
   Button,
-} from "@/shared/ui";
+} from "../../../shared/ui";
 
 export function LoginForm() {
   const form = useForm<LoginSchemaType>({

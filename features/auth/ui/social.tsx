@@ -1,4 +1,4 @@
-import { Button } from "@/shared/ui";
+import { Button } from "../../../shared/ui";
 import { FaGoogle as Google, FaYandex as Yandex } from "react-icons/fa";
 
 export function Social() {
